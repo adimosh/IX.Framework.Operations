@@ -10,7 +10,7 @@
     <PackageReference Include="StyleCop.Analyzers" Version="1.2.0-beta.113" PrivateAssets="all" />
     <PackageReference Include="Microsoft.DotNet.Analyzers.Compatibility" Version="0.2.12-alpha" PrivateAssets="all" />
 
-    <AdditionalFiles Include="stylecop.json" Link="stylecop.json" />
+    <AdditionalFiles Include="..\..\opt\msbuild\stylecop.json" Link="stylecop.json" />
   </ItemGroup>
 
   <!-- IDisposable analyzer -->
