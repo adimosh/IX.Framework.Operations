@@ -11,4 +11,6 @@ steps:
 - template: build-solution.yml
   parameters:
     solutionName: ${{ parameters.solutionName }}
-- template: test-solution.yml
+    configurationName: 'Release'
+- template: generate-changelog.yml
+- template: copy-artifacts.yml

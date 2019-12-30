@@ -11,4 +11,3 @@ steps:
 - template: build-solution.yml
   parameters:
     solutionName: ${{ parameters.solutionName }}
-- template: test-solution.yml

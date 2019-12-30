@@ -11,4 +11,10 @@ steps:
 - template: build-solution.yml
   parameters:
     solutionName: ${{ parameters.solutionName }}
-- template: test-solution.yml
+- template: clean-solution.yml
+  parameters:
+    solutionName: ${{ parameters.solutionName }}
+- template: build-solution.yml
+  parameters:
+    solutionName: ${{ parameters.solutionName }}
+    configurationName: 'Release'
