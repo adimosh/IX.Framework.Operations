@@ -7,23 +7,20 @@
 
   <!-- StyleCop -->
   <ItemGroup>
-    <PackageReference Include="StyleCop.Analyzers" Version="1.2.0-beta.113" PrivateAssets="all" />
+    <PackageReference Include="StyleCop.Analyzers" Version="1.2.0-beta.164" PrivateAssets="all" />
     <PackageReference Include="Microsoft.DotNet.Analyzers.Compatibility" Version="0.2.12-alpha" PrivateAssets="all" />
 
     <AdditionalFiles Include="..\..\opt\msbuild\stylecop.json" Link="stylecop.json" />
   </ItemGroup>
 
-  <!-- IDisposable analyzer -->
-  <ItemGroup>
-    <PackageReference Include="IDisposableAnalyzers" Version="3.2.0" PrivateAssets="all" />
-  </ItemGroup>
-
-  <!-- ErrorProne.Net - only in debug, as it tends to be rather heavy -->
+  <!-- Further analyzers - only in debug, as they tend to be rather heavy -->
   <ItemGroup Condition="'$(Configuration)'=='Debug'">
     <PackageReference Include="ErrorProne.NET.CoreAnalyzers" Version="0.2.0-beta.7" PrivateAssets="all" />
     <PackageReference Include="ErrorProne.Net.Structs" Version="0.2.0-beta.7" PrivateAssets="all" />
 
-    <PackageReference Include="ClrHeapAllocationAnalyzer" Version="1.0.0.9" PrivateAssets="all" />
+    <PackageReference Include="ClrHeapAllocationAnalyzer" Version="3.0.0" PrivateAssets="all" />
+
+    <PackageReference Include="IDisposableAnalyzers" Version="3.3.2" PrivateAssets="all" />
   </ItemGroup>
 
   <!-- Support -->
