@@ -15,3 +15,9 @@
         typeof(decimal),
     };
 #>
+<#+
+bool IsTypeUnsigned(Type type)
+{
+    return (type == typeof(byte) || type == typeof(ushort) || type == typeof(uint) || type == typeof(ulong) || type == typeof(char));
+}
+#>
