@@ -1,13 +1,10 @@
+# Standard release build with no test
+
 parameters:
   solutionName: ''
 
 steps:
-- task: UseDotNet@2
-  displayName: 'Install .NET Core 3.0'
-  inputs:
-    packageType: sdk
-    version: '3.0.100'
-    installationPath: $(Agent.ToolsDirectory)/dotnet
+- template: install-dotnetcore.yml
 - template: build-solution.yml
   parameters:
     solutionName: ${{ parameters.solutionName }}
