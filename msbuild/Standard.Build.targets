@@ -15,12 +15,12 @@
 
   <!-- Further analyzers - only in debug, as they tend to be rather heavy -->
   <ItemGroup Condition="'$(Configuration)'=='Debug'">
-    <PackageReference Include="ErrorProne.NET.CoreAnalyzers" Version="0.2.0-beta.7" PrivateAssets="all" />
-    <PackageReference Include="ErrorProne.Net.Structs" Version="0.2.0-beta.7" PrivateAssets="all" />
+    <PackageReference Include="ErrorProne.NET.CoreAnalyzers" Version="0.3.0-beta.0" PrivateAssets="all" />
+    <PackageReference Include="ErrorProne.Net.Structs" Version="0.3.0-beta.0" PrivateAssets="all" />
 
     <PackageReference Include="ClrHeapAllocationAnalyzer" Version="3.0.0" PrivateAssets="all" />
 
-    <PackageReference Include="IDisposableAnalyzers" Version="3.3.8" PrivateAssets="all" />
+    <PackageReference Include="IDisposableAnalyzers" Version="3.4.1" PrivateAssets="all" />
   </ItemGroup>
 
   <!-- Support -->
