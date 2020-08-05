@@ -1,0 +1,27 @@
+# The collection and generation of code coverage results
+
+steps:
+- task: DotNetCoreCLI@2
+  displayName: 'Create the tool manifest'
+  inputs:
+    command: 'custom'
+    custom: 'new'
+    arguments: 'tool-manifest'
+- task: DotNetCoreCLI@2
+  displayName: 'Install code coverage report generator tool'
+  inputs:
+    command: 'custom'
+    custom: 'tool install'
+    arguments: 'dotnet-reportgenerator-globaltool'
+- task: Palmmedia.reportgenerator.reportgenerator-build-release-task.reportgenerator@4
+  displayName: 'Generate code coverage report'
+  inputs:
+    reports: 'src/IX.UnitTests/**/coverage.cobertura.xml'
+    targetdir: '$(build.artifactstagingdirectory)/TestResults/'
+    reporttypes: 'HtmlInline_AzurePipelines;Cobertura;Badges'
+- task: PublishCodeCoverageResults@1
+  displayName: 'Publish Code Coverage Results'
+  inputs:
+    codeCoverageTool: cobertura
+    summaryFileLocation: '$(build.artifactstagingdirectory)/TestResults/cobertura.xml'
+    reportDirectory: '$(build.artifactstagingdirectory)/TestResults'

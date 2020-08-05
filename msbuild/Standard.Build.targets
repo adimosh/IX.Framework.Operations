@@ -1,20 +1,25 @@
 <Project>
 
+  <!-- Packability -->
+  <PropertyGroup Condition="'$(IsTestProject)'=='true'">
+    <IsPackable>false</IsPackable>
+  </PropertyGroup>
+
   <!-- SourceLink -->
-  <ItemGroup>
+  <ItemGroup Condition="'$(IsTestProject)'!='true'">
     <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.0.0" PrivateAssets="All"/>
   </ItemGroup>
 
   <!-- StyleCop -->
   <ItemGroup>
-    <PackageReference Include="StyleCop.Analyzers" Version="1.2.0-beta.164" PrivateAssets="all" />
+    <PackageReference Include="StyleCop.Analyzers" Version="1.2.0-beta.205" PrivateAssets="all" />
     <PackageReference Include="Microsoft.DotNet.Analyzers.Compatibility" Version="0.2.12-alpha" PrivateAssets="all" />
 
     <AdditionalFiles Include="..\..\opt\msbuild\stylecop.json" Link="stylecop.json" />
   </ItemGroup>
 
   <!-- Further analyzers - only in debug, as they tend to be rather heavy -->
-  <ItemGroup Condition="'$(Configuration)'=='Debug'">
+  <ItemGroup Condition="'$(Configuration)'=='Debug' And '$(IsTestProject)'!='true'">
     <PackageReference Include="ErrorProne.NET.CoreAnalyzers" Version="0.3.0-beta.0" PrivateAssets="all" />
     <PackageReference Include="ErrorProne.Net.Structs" Version="0.3.0-beta.0" PrivateAssets="all" />
 
@@ -31,6 +36,14 @@
   <!-- JetBrains annotations -->
   <ItemGroup>
     <PackageReference Include="JetBrains.Annotations" Version="2020.1.0" />
+  </ItemGroup>
+  
+  <!-- Code coverage -->
+  <ItemGroup Condition="'$(IsTestProject)'=='true'">
+    <PackageReference Include="coverlet.collector" Version="1.3.0">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
   </ItemGroup>
 
 </Project>
