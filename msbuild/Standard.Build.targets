@@ -6,12 +6,12 @@
   </PropertyGroup>
 
   <!-- SourceLink -->
-  <ItemGroup Condition="'$(IsTestProject)'!='true'">
+  <ItemGroup Condition="'$(Configuration)'!='Debug' And '$(IsTestProject)'!='true'">
     <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.0.0" PrivateAssets="All"/>
   </ItemGroup>
 
   <!-- StyleCop -->
-  <ItemGroup>
+  <ItemGroup Condition="'$(Configuration)'=='Debug'">
     <PackageReference Include="StyleCop.Analyzers" Version="1.2.0-beta.205" PrivateAssets="all" />
     <PackageReference Include="Microsoft.DotNet.Analyzers.Compatibility" Version="0.2.12-alpha" PrivateAssets="all" />
 
@@ -39,11 +39,11 @@
   </ItemGroup>
   
   <!-- Code coverage -->
-  <ItemGroup Condition="'$(IsTestProject)'=='true'">
+  <!--<ItemGroup Condition="'$(IsTestProject)'=='true'">
     <PackageReference Include="coverlet.collector" Version="1.3.0">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
-  </ItemGroup>
+  </ItemGroup>-->
 
 </Project>
