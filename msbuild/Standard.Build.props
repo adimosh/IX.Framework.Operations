@@ -124,4 +124,9 @@
     <DefineConstants>$(DefineConstants);FRAMEWORK_FULL_STANDARD</DefineConstants>
   </PropertyGroup>
 
+  <!-- Packability -->
+  <PropertyGroup Condition="'$(IsTestProject)'=='true'">
+    <IsPackable>false</IsPackable>
+  </PropertyGroup>
+
 </Project>
