@@ -9,4 +9,4 @@ steps:
   inputs:
     command: 'test'
     projects: 'src/IX.UnitTests/IX.UnitTests.csproj'
-    arguments: '--no-build -c "${{ parameters.configurationName }}"'
+    arguments: '--no-build -c "${{ parameters.configurationName }}" --collect:"XPlat Code Coverage"'

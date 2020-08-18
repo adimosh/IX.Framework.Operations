@@ -19,3 +19,4 @@ steps:
 - template: test-solution.yml
   parameters:
     configurationName: 'Release'
+- template: code-coverage.yml
