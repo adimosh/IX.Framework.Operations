@@ -9,4 +9,3 @@ steps:
   parameters:
     solutionName: ${{ parameters.solutionName }}
 - template: test-solution.yml
-- template: code-coverage.yml

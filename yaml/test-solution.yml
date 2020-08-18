@@ -7,7 +7,6 @@ steps:
 - task: DotNetCoreCLI@2
   displayName: 'Unit tests in ${{ parameters.configurationName }}'
   inputs:
-    command: 'custom'
-    custom: 'test'
+    command: 'test'
     projects: 'src/IX.UnitTests/IX.UnitTests.csproj'
-    arguments: '--logger trx --no-build -c "${{ parameters.configurationName }}" --collect:"XPlat Code Coverage"'
+    arguments: '--no-build -c "${{ parameters.configurationName }}"'
