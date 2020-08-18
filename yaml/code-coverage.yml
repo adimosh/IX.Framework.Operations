@@ -12,3 +12,4 @@ steps:
   inputs:
     codeCoverageTool: cobertura
     summaryFileLocation: '$(Agent.TempDirectory)/CodeCoverage/cobertura.xml'
+    reportDirectory: '$(Agent.TempDirectory)/CodeCoverage/'
