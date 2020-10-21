@@ -11,12 +11,13 @@ steps:
     projects: 'src/IX.UnitTests/IX.UnitTests.csproj'
     arguments: '--no-build -c "${{ parameters.configurationName }}" --collect:"XPlat Code Coverage" /p:CoverletOutputFormat=cobertura /p:Include="IX.*" /p:Exclude="IX.UnitTests*"'
 
-- task: PowerShell@2
+- task: CopyFiles@2
   displayName: 'Copy raw coverage files'
   inputs:
-    targetType: 'inline'
-    script: 'Get-ChildItem -Path $(Agent.TempDirectory) -Recurse -Include coverage.cobertura.xml | Copy-Item -Destination $(Build.ArtifactStagingDirectory)/rawcoverage/ -Recurse -Force'
-  
+    SourceFolder: '$(Agent.TempDirectory)'
+    Contents: '**/coverage.cobertura.xml'
+    TargetFolder: '$(Build.ArtifactStagingDirectory)/rawcoverage/'
+
 - task: PublishBuildArtifacts@1
   displayName: 'Publish raw code coverage artifacts'
   inputs:
