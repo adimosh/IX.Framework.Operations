@@ -7,9 +7,22 @@ steps:
     reports: '$(Agent.TempDirectory)/**/coverage.cobertura.xml'
     targetdir: '$(Agent.TempDirectory)/CodeCoverage/'
     reporttypes: 'HtmlInline_AzurePipelines;Cobertura;Badges'
+
 - task: PublishCodeCoverageResults@1
   displayName: 'Publish Code Coverage Results'
   inputs:
     codeCoverageTool: cobertura
     summaryFileLocation: '$(Agent.TempDirectory)/CodeCoverage/cobertura.xml'
     reportDirectory: '$(Agent.TempDirectory)/CodeCoverage/'
+
+- task: CopyFiles@2
+  displayName: 'Copy coverage report files'
+  inputs:
+    Contents: '$(Agent.TempDirectory)/CodeCoverage/**/*.*'
+    TargetFolder: '$(Build.ArtifactStagingDirectory)/coveragereport/'
+
+- task: PublishBuildArtifacts@1
+  displayName: 'Publish coverage report artifacts'
+  inputs:
+    PathtoPublish: '$(Build.ArtifactStagingDirectory)/coveragereport'
+    ArtifactName: CoverageReport

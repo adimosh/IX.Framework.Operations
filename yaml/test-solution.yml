@@ -9,4 +9,17 @@ steps:
   inputs:
     command: 'test'
     projects: 'src/IX.UnitTests/IX.UnitTests.csproj'
-    arguments: '--no-build -c "${{ parameters.configurationName }}" --collect:"XPlat Code Coverage"'
+    arguments: '--no-build -c "${{ parameters.configurationName }}" --collect:"XPlat Code Coverage" /p:CoverletOutputFormat=cobertura /p:Include="IX.*" /p:Exclude="IX.UnitTests*"'
+
+- task: CopyFiles@2
+  displayName: 'Copy raw coverage files'
+  inputs:
+    Contents: '$(Agent.TempDirectory)/**/coverage.cobertura.xml'
+    TargetFolder: '$(Build.ArtifactStagingDirectory)/rawcoverage/'
+
+- task: PublishBuildArtifacts@1
+  displayName: 'Publish raw code coverage artifacts'
+  inputs:
+    PathtoPublish: '$(Build.ArtifactStagingDirectory)/rawcoverage'
+    ArtifactName: RawCoverage
+
