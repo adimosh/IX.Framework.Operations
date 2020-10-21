@@ -5,11 +5,11 @@ steps:
   displayName: 'Install .NET Core 2.1 LTS'
   inputs:
     packageType: sdk
-    version: '2.1.809'
+    version: '2.1.811'
     installationPath: $(Agent.ToolsDirectory)/dotnet
 - task: UseDotNet@2
   displayName: 'Install .NET Core 3.1'
   inputs:
     packageType: sdk
-    version: '3.1.401'
+    version: '3.1.403'
     installationPath: $(Agent.ToolsDirectory)/dotnet
