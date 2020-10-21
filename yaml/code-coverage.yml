@@ -14,15 +14,3 @@ steps:
     codeCoverageTool: cobertura
     summaryFileLocation: '$(Agent.TempDirectory)/CodeCoverage/cobertura.xml'
     reportDirectory: '$(Agent.TempDirectory)/CodeCoverage/'
-
-- task: CopyFiles@2
-  displayName: 'Copy coverage report files'
-  inputs:
-    Contents: '$(Agent.TempDirectory)/CodeCoverage/**/*.*'
-    TargetFolder: '$(Build.ArtifactStagingDirectory)/coveragereport/'
-
-- task: PublishBuildArtifacts@1
-  displayName: 'Publish coverage report artifacts'
-  inputs:
-    PathtoPublish: '$(Build.ArtifactStagingDirectory)/coveragereport'
-    ArtifactName: CoverageReport
