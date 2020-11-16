@@ -105,14 +105,22 @@
   <PropertyGroup Condition="'$(TargetFramework)'=='netstandard2.0'">
     <TargetFrameworkIsStandard2>true</TargetFrameworkIsStandard2>
     <TargetFrameworkIsFullyStandardized>true</TargetFrameworkIsFullyStandardized>
-    <DefineConstants>$(DefineConstants);STANDARD_GT_13;STANDARD_GT_14;STANDARD_GT_15;STANDARD_GT_16</DefineConstants>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(TargetFramework)'=='netstandard2.1'">
     <TargetFrameworkIsStandard2>true</TargetFrameworkIsStandard2>
     <TargetFrameworkIsFullyStandardized>true</TargetFrameworkIsFullyStandardized>
+	<TargetFrameworkAdvanced>true</TargetFrameworkAdvanced>
     <LanguageFeaturesNullableReferences>true</LanguageFeaturesNullableReferences>
-    <DefineConstants>$(DefineConstants);STANDARD_GT_13;STANDARD_GT_14;STANDARD_GT_15;STANDARD_GT_16;STANDARD_GT_20</DefineConstants>
+    <DefineConstants>$(DefineConstants);STANDARD_GT_20</DefineConstants>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(TargetFramework)'=='net5.0'">
+    <TargetFrameworkIs5>true</TargetFrameworkIs5>
+    <TargetFrameworkIsFullyStandardized>true</TargetFrameworkIsFullyStandardized>
+	<TargetFrameworkAdvanced>true</TargetFrameworkAdvanced>
+    <LanguageFeaturesNullableReferences>true</LanguageFeaturesNullableReferences>
+    <DefineConstants>$(DefineConstants);STANDARD_GT_20;STANDARD_GT_21</DefineConstants>
   </PropertyGroup>
 
   <!-- Extra debug symbols for target framework type -->
@@ -124,6 +132,14 @@
     <DefineConstants>$(DefineConstants);FRAMEWORK_FULL_STANDARD</DefineConstants>
   </PropertyGroup>
 
+  <PropertyGroup Condition="'$(LanguageFeaturesNullableReferences)'=='true'">
+    <DefineConstants>$(DefineConstants);FRAMEWORK_CAN_DO_NULLABLE</DefineConstants>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(TargetFrameworkAdvanced)'=='true'">
+    <DefineConstants>$(DefineConstants);FRAMEWORK_ADVANCED</DefineConstants>
+  </PropertyGroup>
+
   <!-- Packability -->
   <PropertyGroup Condition="'$(IsTestProject)'=='true'">
     <IsPackable>false</IsPackable>
@@ -132,5 +148,10 @@
   <ItemGroup Condition="'$(IsTestProject)'!='true'">
     <SourceRoot Include="$(NuGetPackageRoot)" />
   </ItemGroup>
+  
+  <!-- Language version -->
+  <PropertyGroup>
+    <LangVersion>latest</LangVersion>
+  </PropertyGroup>
 
 </Project>
