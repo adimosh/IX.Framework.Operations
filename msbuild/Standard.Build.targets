@@ -36,7 +36,8 @@
       <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
     </PackageReference>
 	
-    <AdditionalFiles Include="..\..\opt\msbuild\stylecop.json" Link="stylecop.json" />
+    <AdditionalFiles Include="..\..\opt\content\stylecop.json" Link="stylecop.json" />
+    <Compile Include="..\..\opt\content\cs\HeapAllocationAnalyzerSuppressions.cs" Link="HeapAllocationAnalyzerSuppressions.cs" />
   </ItemGroup>
 
   <!-- Further analyzers - only in debug, as they tend to be rather heavy -->
