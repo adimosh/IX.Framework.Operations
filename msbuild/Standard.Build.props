@@ -159,5 +159,25 @@
   <PropertyGroup>
     <LangVersion>latest</LangVersion>
   </PropertyGroup>
+  
+  <!-- Deterministic builds -->
+  <PropertyGroup>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  
+  <!-- JetBrains annotations -->
+  <PropertyGroup>
+    <DefineConstants>$(DefineConstants);JETBRAINS_ANNOTATIONS</DefineConstants>
+  </PropertyGroup>
+  
+  <!-- SourceLink -->
+  <PropertyGroup>
+    <PublishRepositoryUrl>true</PublishRepositoryUrl>
+    <EmbedUntrackedSources>true</EmbedUntrackedSources>
+    <IncludeSymbols>true</IncludeSymbols>
+    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+    <DebugType>portable</DebugType>
+    <DebugSymbols>true</DebugSymbols>
+  </PropertyGroup>
 
 </Project>

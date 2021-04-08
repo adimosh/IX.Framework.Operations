@@ -4,7 +4,19 @@
   <PropertyGroup Condition="'$(IsTestProject)'=='true'">
     <IsPackable>false</IsPackable>
   </PropertyGroup>
-
+  
+  <ItemGroup Condition="'$(IsTestProject)'!='true'">
+    <SourceRoot Include="$(NuGetPackageRoot)" />
+  </ItemGroup>
+  
+  <PropertyGroup Condition="'$(IsTestProject)'!='true'">
+    <DocumentationFile>bin\$(Configuration)\$(TargetFramework)\$(AssemblyName).xml</DocumentationFile>
+  </PropertyGroup>
+  
+  <PropertyGroup Condition="'$(Configuration)'=='Release' And '$(IsTestProject)'!='true'">
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+  </PropertyGroup>
+  
   <!-- SourceLink -->
   <ItemGroup Condition="'$(Configuration)'!='Debug' And '$(IsTestProject)'!='true'">
     <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.0.0">
@@ -72,5 +84,17 @@
   <ItemGroup>
     <PackageReference Include="JetBrains.Annotations" Version="2021.1.0" />
   </ItemGroup>
+  
+  <!-- Do not include VS Code-specific files -->
+  <ItemGroup>
+    <Compile Remove=".vscode\**" />
+    <EmbeddedResource Remove=".vscode\**" />
+    <None Remove=".vscode\**" />
+  </ItemGroup>
+  
+  <!-- Error on obsolete target frameworks, if it was requested -->
+  <Target Name="ErrorOnObsoleteFrameworks" BeforeTargets="Build;Rebuild">
+    <Error Condition="'$(TargetFrameworkIsObsolete)|$(FailObsoleteTargetFrameworks)'=='true|true'" Text="The target framework $(TargetFramework) is considered obsolete, and should be avoided." />
+  </Target>
 
 </Project>
