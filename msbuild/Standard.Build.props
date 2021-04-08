@@ -33,44 +33,43 @@
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(TargetFramework)'=='net452'">
-    <TargetFrameworkIsFramework>true</TargetFrameworkIsFramework>
+    <TargetFrameworkIsObsolete>true</TargetFrameworkIsObsolete>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(TargetFramework)'=='net46'">
     <TargetFrameworkIsFramework>true</TargetFrameworkIsFramework>
-    <DefineConstants>$(DefineConstants);FRAMEWORK_GT_452</DefineConstants>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(TargetFramework)'=='net461'">
     <TargetFrameworkIsFramework>true</TargetFrameworkIsFramework>
-    <DefineConstants>$(DefineConstants);FRAMEWORK_GT_452;FRAMEWORK_GT_46</DefineConstants>
+    <DefineConstants>$(DefineConstants);FRAMEWORK_GT_46</DefineConstants>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(TargetFramework)'=='net462'">
     <TargetFrameworkIsFramework>true</TargetFrameworkIsFramework>
-    <DefineConstants>$(DefineConstants);FRAMEWORK_GT_452;FRAMEWORK_GT_46;FRAMEWORK_GT_461</DefineConstants>
+    <DefineConstants>$(DefineConstants);FRAMEWORK_GT_46;FRAMEWORK_GT_461</DefineConstants>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(TargetFramework)'=='net47'">
     <TargetFrameworkIsFramework>true</TargetFrameworkIsFramework>
-    <DefineConstants>$(DefineConstants);FRAMEWORK_GT_452;FRAMEWORK_GT_46;FRAMEWORK_GT_461;FRAMEWORK_GT_462</DefineConstants>
+    <DefineConstants>$(DefineConstants);FRAMEWORK_GT_46;FRAMEWORK_GT_461;FRAMEWORK_GT_462</DefineConstants>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(TargetFramework)'=='net471'">
     <TargetFrameworkIsFramework>true</TargetFrameworkIsFramework>
-    <DefineConstants>$(DefineConstants);FRAMEWORK_GT_452;FRAMEWORK_GT_46;FRAMEWORK_GT_461;FRAMEWORK_GT_462;FRAMEWORK_GT_47</DefineConstants>
+    <DefineConstants>$(DefineConstants);FRAMEWORK_GT_46;FRAMEWORK_GT_461;FRAMEWORK_GT_462;FRAMEWORK_GT_47</DefineConstants>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(TargetFramework)'=='net472'">
     <TargetFrameworkIsFramework>true</TargetFrameworkIsFramework>
     <TargetFrameworkIsFullyStandardized>true</TargetFrameworkIsFullyStandardized>
-    <DefineConstants>$(DefineConstants);FRAMEWORK_GT_452;FRAMEWORK_GT_46;FRAMEWORK_GT_461;FRAMEWORK_GT_462;FRAMEWORK_GT_47;FRAMEWORK_GT_471</DefineConstants>
+    <DefineConstants>$(DefineConstants);FRAMEWORK_GT_46;FRAMEWORK_GT_461;FRAMEWORK_GT_462;FRAMEWORK_GT_47;FRAMEWORK_GT_471</DefineConstants>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(TargetFramework)'=='net48'">
     <TargetFrameworkIsFramework>true</TargetFrameworkIsFramework>
     <TargetFrameworkIsFullyStandardized>true</TargetFrameworkIsFullyStandardized>
-    <DefineConstants>$(DefineConstants);FRAMEWORK_GT_452;FRAMEWORK_GT_46;FRAMEWORK_GT_461;FRAMEWORK_GT_462;FRAMEWORK_GT_47;FRAMEWORK_GT_471;FRAMEWORK_GT_472</DefineConstants>
+    <DefineConstants>$(DefineConstants);FRAMEWORK_GT_46;FRAMEWORK_GT_461;FRAMEWORK_GT_462;FRAMEWORK_GT_47;FRAMEWORK_GT_471;FRAMEWORK_GT_472</DefineConstants>
   </PropertyGroup>
 
   <!-- .NET Standard -->
@@ -103,12 +102,10 @@
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(TargetFramework)'=='netstandard2.0'">
-    <TargetFrameworkIsStandard2>true</TargetFrameworkIsStandard2>
     <TargetFrameworkIsFullyStandardized>true</TargetFrameworkIsFullyStandardized>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(TargetFramework)'=='netstandard2.1'">
-    <TargetFrameworkIsStandard2>true</TargetFrameworkIsStandard2>
     <TargetFrameworkIsFullyStandardized>true</TargetFrameworkIsFullyStandardized>
 	<TargetFrameworkAdvanced>true</TargetFrameworkAdvanced>
     <LanguageFeaturesNullableReferences>true</LanguageFeaturesNullableReferences>
@@ -121,6 +118,15 @@
 	<TargetFrameworkAdvanced>true</TargetFrameworkAdvanced>
     <LanguageFeaturesNullableReferences>true</LanguageFeaturesNullableReferences>
     <DefineConstants>$(DefineConstants);STANDARD_GT_20;STANDARD_GT_21</DefineConstants>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(TargetFramework)'=='net6.0'">
+    <TargetFrameworkIs5>true</TargetFrameworkIs5>
+    <TargetFrameworkIs6>true</TargetFrameworkIs6>
+    <TargetFrameworkIsFullyStandardized>true</TargetFrameworkIsFullyStandardized>
+	<TargetFrameworkAdvanced>true</TargetFrameworkAdvanced>
+    <LanguageFeaturesNullableReferences>true</LanguageFeaturesNullableReferences>
+    <DefineConstants>$(DefineConstants);STANDARD_GT_20;STANDARD_GT_21;STANDARD_GT_NET50</DefineConstants>
   </PropertyGroup>
 
   <!-- Extra debug symbols for target framework type -->

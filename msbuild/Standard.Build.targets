@@ -15,7 +15,7 @@
 
   <!-- StyleCop -->
   <ItemGroup Condition="'$(Configuration)'=='Debug'">
-    <PackageReference Include="StyleCop.Analyzers" Version="1.2.0-beta.321">
+    <PackageReference Include="StyleCop.Analyzers" Version="1.2.0-beta.333">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
     </PackageReference>
@@ -46,7 +46,7 @@
     </PackageReference>
 
     <!-- ErrorProne.Net -->
-    <PackageReference Include="ErrorProne.NET.CoreAnalyzers" Version="0.3.0-beta.0">
+    <PackageReference Include="ErrorProne.NET.CoreAnalyzers" Version="0.3.1-beta.2">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
     </PackageReference>
@@ -62,20 +62,15 @@
     </PackageReference>
 
     <!-- IDisposable Analyzer -->
-    <PackageReference Include="IDisposableAnalyzers" Version="3.4.8">
+    <PackageReference Include="IDisposableAnalyzers" Version="3.4.13">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
     </PackageReference>
   </ItemGroup>
 
-  <!-- Support -->
-  <ItemGroup Condition="'$(TargetFrameworkIsStandard)'=='true' And '$(Configuration)'=='Debug'">
-    <PackageReference Include="System.Diagnostics.Tools" Version="4.3.0" />
-  </ItemGroup>
-
   <!-- JetBrains annotations -->
   <ItemGroup>
-    <PackageReference Include="JetBrains.Annotations" Version="2020.3.0" />
+    <PackageReference Include="JetBrains.Annotations" Version="2021.1.0" />
   </ItemGroup>
 
 </Project>
