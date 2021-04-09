@@ -151,7 +151,7 @@
     <IsPackable>false</IsPackable>
   </PropertyGroup>
     
-  <PropertyGroup Condition="'$(Configuration)'=='Release'>
+  <PropertyGroup Condition="'$(Configuration)'=='Release'">
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
   </PropertyGroup>
 
