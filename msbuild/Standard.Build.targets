@@ -13,10 +13,6 @@
     <DocumentationFile>bin\$(Configuration)\$(TargetFramework)\$(AssemblyName).xml</DocumentationFile>
   </PropertyGroup>
   
-  <PropertyGroup Condition="'$(Configuration)'=='Release' And '$(IsTestProject)'!='true'">
-    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-  </PropertyGroup>
-  
   <!-- SourceLink -->
   <ItemGroup Condition="'$(Configuration)'!='Debug' And '$(IsTestProject)'!='true'">
     <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.0.0">
