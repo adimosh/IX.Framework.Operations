@@ -54,16 +54,6 @@
       <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
     </PackageReference>
 
-    <!-- ErrorProne.Net -->
-    <PackageReference Include="ErrorProne.NET.CoreAnalyzers" Version="0.3.1-beta.2">
-      <PrivateAssets>all</PrivateAssets>
-      <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
-    </PackageReference>
-    <PackageReference Include="ErrorProne.NET.Structs" Version="0.3.0-beta.0">
-      <PrivateAssets>all</PrivateAssets>
-      <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
-    </PackageReference>
-
     <!-- CLR Heap Allocation Analyzer -->
     <PackageReference Include="ClrHeapAllocationAnalyzer" Version="3.0.0">
       <PrivateAssets>all</PrivateAssets>
