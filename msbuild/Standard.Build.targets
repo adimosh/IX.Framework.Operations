@@ -37,19 +37,9 @@
   </ItemGroup>
 
   <!-- Further analyzers - only in debug, as they tend to be rather heavy -->
-  <PropertyGroup Condition="'$(Configuration)'=='Debug' And '$(IsTestProject)'!='true' And '$(TargetFrameworkIs5)'!='true' And '$(TargetFrameworkIs6)'!='true'">
+  <PropertyGroup Condition="'$(Configuration)'=='Debug' And '$(IsTestProject)'!='true' And '$(TargetFrameworkIs5)'!='true'">
     <EnableNETAnalyzers>true</EnableNETAnalyzers>
   </PropertyGroup>
-  
-  <ItemGroup Condition="'$(Configuration)'=='Debug' And '$(IsTestProject)'!='true' And '$(TargetFrameworkIs5)'!='true' And '$(TargetFrameworkIs6)'!='true'">
-
-    <!-- Microsoft FxCop Analyzer -->
-    <PackageReference Include="Microsoft.CodeAnalysis.NetAnalyzers" Version="5.0.3">
-      <PrivateAssets>all</PrivateAssets>
-      <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
-    </PackageReference>
-
-  </ItemGroup>
 
   <ItemGroup Condition="'$(Configuration)'=='Debug' And '$(IsTestProject)'!='true'">
     <!-- CLR Heap Allocation Analyzer -->
@@ -60,12 +50,6 @@
 
     <!-- IDisposable Analyzer -->
     <PackageReference Include="IDisposableAnalyzers" Version="3.4.13">
-      <PrivateAssets>all</PrivateAssets>
-      <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
-    </PackageReference>
-
-    <!-- PropertyChanged Analyzer -->
-    <PackageReference Include="PropertyChangedAnalyzers" Version="3.2.2">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
     </PackageReference>
