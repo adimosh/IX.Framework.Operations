@@ -172,11 +172,6 @@
     <Deterministic>true</Deterministic>
   </PropertyGroup>
   
-  <!-- JetBrains annotations -->
-  <PropertyGroup>
-    <DefineConstants>$(DefineConstants);JETBRAINS_ANNOTATIONS</DefineConstants>
-  </PropertyGroup>
-  
   <!-- SourceLink -->
   <PropertyGroup>
     <PublishRepositoryUrl>true</PublishRepositoryUrl>

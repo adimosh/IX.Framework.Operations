@@ -37,7 +37,11 @@
   </ItemGroup>
 
   <!-- Further analyzers - only in debug, as they tend to be rather heavy -->
-  <ItemGroup Condition="'$(Configuration)'=='Debug' And '$(IsTestProject)'!='true' And '$(TargetFrameworkIs5)'!='true'">
+  <PropertyGroup Condition="'$(Configuration)'=='Debug' And '$(IsTestProject)'!='true' And '$(TargetFrameworkIs5)'!='true' And '$(TargetFrameworkIs6)'!='true'">
+    <EnableNETAnalyzers>true</EnableNETAnalyzers>
+  </PropertyGroup>
+  
+  <ItemGroup Condition="'$(Configuration)'=='Debug' And '$(IsTestProject)'!='true' And '$(TargetFrameworkIs5)'!='true' And '$(TargetFrameworkIs6)'!='true'">
 
     <!-- Microsoft FxCop Analyzer -->
     <PackageReference Include="Microsoft.CodeAnalysis.NetAnalyzers" Version="5.0.3">
@@ -48,12 +52,6 @@
   </ItemGroup>
 
   <ItemGroup Condition="'$(Configuration)'=='Debug' And '$(IsTestProject)'!='true'">
-    <!-- Async usage analyzer -->
-    <PackageReference Include="AsyncUsageAnalyzers" Version="1.0.0-alpha003">
-      <PrivateAssets>all</PrivateAssets>
-      <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
-    </PackageReference>
-
     <!-- CLR Heap Allocation Analyzer -->
     <PackageReference Include="ClrHeapAllocationAnalyzer" Version="3.0.0">
       <PrivateAssets>all</PrivateAssets>
@@ -65,11 +63,20 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
     </PackageReference>
+
+    <!-- PropertyChanged Analyzer -->
+    <PackageReference Include="PropertyChangedAnalyzers" Version="3.2.2">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
+    </PackageReference>
   </ItemGroup>
 
   <!-- JetBrains annotations -->
   <ItemGroup>
-    <PackageReference Include="JetBrains.Annotations" Version="2021.1.0" />
+    <PackageReference Include="JetBrains.Annotations" Version="2021.1.0">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
+	</PackageReference>
   </ItemGroup>
   
   <!-- Do not include VS Code-specific files -->
