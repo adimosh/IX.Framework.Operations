@@ -73,10 +73,7 @@
 
   <!-- JetBrains annotations -->
   <ItemGroup>
-    <PackageReference Include="JetBrains.Annotations" Version="2021.1.0">
-      <PrivateAssets>all</PrivateAssets>
-      <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
-	</PackageReference>
+    <PackageReference Include="JetBrains.Annotations" Version="2021.1.0" />
   </ItemGroup>
   
   <!-- Do not include VS Code-specific files -->
