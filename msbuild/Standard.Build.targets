@@ -23,7 +23,7 @@
 
   <!-- StyleCop -->
   <ItemGroup Condition="'$(Configuration)'=='Debug'">
-    <PackageReference Include="StyleCop.Analyzers" Version="1.2.0-beta.333">
+    <PackageReference Include="StyleCop.Analyzers" Version="1.2.0-beta.354">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
     </PackageReference>
@@ -33,7 +33,7 @@
     </PackageReference>
 	
     <AdditionalFiles Include="..\..\opt\content\stylecop.json" Link="stylecop.json" />
-    <Compile Include="..\..\opt\content\cs\HeapAllocationAnalyzerSuppressions.cs" Link="HeapAllocationAnalyzerSuppressions.cs" />
+    <Compile Include="..\..\opt\content\cs\StandardSuppressions.cs" Link="Properties\StandardSuppressions.cs" />
   </ItemGroup>
 
   <!-- Further analyzers - only in debug, as they tend to be rather heavy -->
