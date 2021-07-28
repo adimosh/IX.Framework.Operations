@@ -27,10 +27,6 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
     </PackageReference>
-    <PackageReference Include="Microsoft.DotNet.Analyzers.Compatibility" Version="0.2.12-alpha">
-      <PrivateAssets>all</PrivateAssets>
-      <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
-    </PackageReference>
 	
     <AdditionalFiles Include="..\..\opt\content\stylecop.json" Link="stylecop.json" />
     <Compile Include="..\..\opt\content\cs\StandardSuppressions.cs" Link="Properties\StandardSuppressions.cs" />
