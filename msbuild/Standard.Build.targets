@@ -53,7 +53,7 @@
 
   <!-- JetBrains annotations -->
   <ItemGroup>
-    <PackageReference Include="JetBrains.Annotations" Version="2021.2.0" />
+    <PackageReference Include="JetBrains.Annotations" Version="2021.3.0" />
   </ItemGroup>
   
   <!-- Do not include VS Code-specific files -->
