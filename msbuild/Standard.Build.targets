@@ -45,7 +45,7 @@
     </PackageReference>
 
     <!-- IDisposable Analyzer -->
-    <PackageReference Include="IDisposableAnalyzers" Version="4.0.0">
+    <PackageReference Include="IDisposableAnalyzers" Version="4.0.1">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
     </PackageReference>
