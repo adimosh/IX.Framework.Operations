@@ -182,4 +182,9 @@
 		<DebugSymbols>true</DebugSymbols>
 	</PropertyGroup>
 
+	<!-- Icon -->
+	<PropertyGroup>
+		<PackageIcon>icon.png</PackageIcon>
+	</PropertyGroup>
+
 </Project>
