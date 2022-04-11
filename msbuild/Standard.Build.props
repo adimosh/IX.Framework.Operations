@@ -4,6 +4,10 @@
 	<!-- Targets and symbols -->
 
 	<!-- Obsolete -->
+	<PropertyGroup Condition="'$(TargetFramework)'=='net10'">
+		<TargetFrameworkIsObsolete>true</TargetFrameworkIsObsolete>
+	</PropertyGroup>
+
 	<PropertyGroup Condition="'$(TargetFramework)'=='net11'">
 		<TargetFrameworkIsObsolete>true</TargetFrameworkIsObsolete>
 	</PropertyGroup>
@@ -133,10 +137,6 @@
 	</PropertyGroup>
 
 	<!-- Extra debug symbols for target framework type -->
-	<PropertyGroup Condition="'$(TargetFrameworkIsStandard2)'=='true'">
-		<DefineConstants>$(DefineConstants);NETSTANDARD2</DefineConstants>
-	</PropertyGroup>
-
 	<PropertyGroup Condition="'$(TargetFrameworkIsFullyStandardized)'=='true'">
 		<DefineConstants>$(DefineConstants);FRAMEWORK_FULL_STANDARD</DefineConstants>
 	</PropertyGroup>
