@@ -170,6 +170,12 @@
 		<Deterministic>true</Deterministic>
 	</PropertyGroup>
 
+	<!-- Language options -->
+	<PropertyGroup>
+		<Nullable>enable</Nullable>
+		<ImplicitUsings>enable</ImplicitUsings>
+	</PropertyGroup>
+
 	<!-- SourceLink -->
 	<PropertyGroup>
 		<PublishRepositoryUrl>true</PublishRepositoryUrl>
